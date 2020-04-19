@@ -44,13 +44,23 @@
             <TextBlock Grid.Row="5" Grid.Column="0" Text="TVQ : "/>
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Total : "/>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedInvoice.InvoiceId, Mode=OneWay}"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedInvoice.CreationDateTime, Mode=OneWay}"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedInvoice.Customer.Info, Mode=OneWay}"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedInvoice.SubTotal}"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedInvoice.FedTax, Mode=OneWay}"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedInvoice.ProvTax, Mode=OneWay}"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedInvoice.Total, Mode=OneWay}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedInvoice.InvoiceId}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedInvoice.CreationDateTime}"/>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                    
+                <TextBlock Text="{Binding SelectedInvoice.Customer.Info}"/>
+
+                <Button Content="Voir" Margin="3" Command="{Binding DataContext.DisplayCustomerCommand, 
+                                                 RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DockPanel}}"
+                                       CommandParameter="{Binding SelectedInvoice.Customer}"/>
+
+            </StackPanel>
+
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedInvoice.SubTotal, StringFormat={}{0:c}}" Width="75" TextAlignment="Right"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding SelectedInvoice.FedTax, StringFormat={}{0:c}}" Width="75" TextAlignment="Right"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding SelectedInvoice.ProvTax, StringFormat={}{0:c}}" Width="75" TextAlignment="Right"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding SelectedInvoice.Total, StringFormat={}{0:c}}" Width="75" TextAlignment="Right"/>
         </Grid>
 
     </Grid>
