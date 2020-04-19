@@ -109,7 +109,7 @@
                     
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Facture" Binding="{Binding CreationDateTime}"/>
-                        <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
+                        <DataGridTextColumn Header="Total" Binding="{Binding Total, StringFormat={}{0:c}}"/>
                         <DataGridTemplateColumn Header="Actions">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
