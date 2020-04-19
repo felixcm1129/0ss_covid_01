@@ -39,12 +39,12 @@
                     <MenuItem Header="Factures" Command="{Binding ChangeViewCommand}" CommandParameter="invoices"/>
                 </MenuItem>
                 <MenuItem Header="Enregistrement">
-                    <MenuItem Header="Nouveau" Command="{Binding NewItemCommand}"/>
+                    <MenuItem Header="Nouveau Client" Command="{Binding NewCustomerCommand}"/>
                 </MenuItem>
             </Menu>
         </StackPanel>
         <ToolBar DockPanel.Dock="Top">
-            <Button >
+            <Button Command="{Binding NewCustomerCommand}" >
                 <Image Source="/images/new_user.png" Height="32" Width="32" Stretch="Uniform"/>
             </Button>
             <Separator/>
