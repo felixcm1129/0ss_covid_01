@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 
-namespace Inventaire
+namespace BillingManagement.UI.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
